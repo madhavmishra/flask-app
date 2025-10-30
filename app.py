@@ -250,7 +250,10 @@ def view_record(rec_id):
 def print_record(rec_id):
     return view_record(rec_id)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
+    import os
     ensure_files()
     init_db()
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
