@@ -1,0 +1,12 @@
+body { font-family: Arial; margin: 0; padding: 0; }
+.container { width: 90%; margin: 20px auto; }
+label { display: block; margin-top: 10px; }
+input { width: 100%; padding: 8px; }
+button, .button { margin-top: 10px; padding: 8px 12px; background: #007bff; color: white; border: none; border-radius: 4px; text-decoration: none; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+.a4page { width: 210mm; min-height: 297mm; margin: auto; padding: 20mm; }
+.print-header { text-align: center; }
+.report-table { width: 100%; border-collapse: collapse; }
+.report-table th { text-align: left; background: #f2f2f2; width: 40%; }
+.signature { margin-top: 40px; text-align: right; }

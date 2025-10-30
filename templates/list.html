@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>All Dispatch Records</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>All Dispatch Records</h1>
+    <a href="{{ url_for('index') }}" class="button">+ New Dispatch</a>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th><th>Dispatch No</th><th>Name</th><th>License No</th><th>Nepali Date</th><th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for r in rows %}
+        <tr>
+          <td>{{ r.id }}</td>
+          <td>{{ r.dispatch_no }}</td>
+          <td>{{ r.name }}</td>
+          <td>{{ r.license_no }}</td>
+          <td>{{ r.today_nepali_date }}</td>
+          <td>
+            <a href="{{ url_for('view_record', rec_id=r.id) }}" target="_blank">View</a> |
+            <a href="{{ url_for('edit_record', rec_id=r.id) }}">Edit</a> |
+            <a href="{{ url_for('print_record', rec_id=r.id) }}" target="_blank">Print</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
