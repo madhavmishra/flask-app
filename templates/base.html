@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title or 'Madhav Mishra | Portfolio' }}</title>
+
+    <!-- Bootstrap + AOS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-info" href="#banner">Madhav Mishra</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="#banner">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+    <!-- Footer -->
+    <footer class="text-center py-4 mt-5 bg-dark text-light">
+        <p class="mb-0 text-muted">© 2025 Madhav Mishra | Built with Flask & Bootstrap</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // Typing animation
+        const roles = ["Full Stack Developer 💻","Python & Flask Expert 🐍","Creative Thinker 🎨","Problem Solver ⚙️"];
+        let i = 0, j = 0, current = "", isDeleting = false;
+        const el = document.getElementById("typed");
+
+        function typeEffect() {
+            if (!el) return;
+            const fullText = roles[i];
+            current = isDeleting ? fullText.substring(0, j--) : fullText.substring(0, j++);
+            el.textContent = current;
+
+            if (!isDeleting && j === fullText.length) { isDeleting = true; setTimeout(typeEffect, 1200); }
+            else if (isDeleting && j === 0) { isDeleting = false; i = (i + 1) % roles.length; setTimeout(typeEffect, 400); }
+            else { setTimeout(typeEffect, isDeleting ? 60 : 100); }
+        }
+        typeEffect();
+    </script>
+</body>
+</html>

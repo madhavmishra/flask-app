@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- ===== Banner ===== -->
+<section id="banner" class="banner d-flex align-items-center justify-content-center text-white text-center">
+    <div class="overlay"></div>
+    <div class="banner-text" data-aos="fade-up">
+        <h1 class="fw-bold mb-3">Hi, I'm <span class="text-info">Madhav Mishra</span></h1>
+        <h3 id="typed" class="mb-3"></h3>
+        <p class="lead">Crafting beautiful & functional web experiences with Python and Flask.</p>
+        <a href="#about" class="btn btn-info mt-3">Explore My Work</a>
+    </div>
+</section>
+
+<!-- ===== About Section ===== -->
+<section id="about" class="py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6" data-aos="fade-right">
+                <img src="{{ url_for('static', filename='img/dummy.jpg') }}" class="img-fluid rounded shadow" alt="Profile Image">
+            </div>
+            <div class="col-md-6" data-aos="fade-left">
+                <h2 class="fw-bold mb-3">About Me</h2>
+                <p class="text-muted">
+                    I'm a passionate full-stack developer with experience in Flask, Python, and modern web technologies.
+                    I love transforming ideas into user-friendly, elegant, and high-performing web applications.
+                </p>
+                <ul class="list-unstyled mt-3">
+                    <li>💡 <strong>Skills:</strong> Flask, Python, HTML, CSS, JavaScript, SQLite</li>
+                    <li>⚙️ <strong>Tools:</strong> Git, Bootstrap, VS Code</li>
+                    <li>📍 <strong>Location:</strong> Nepal</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock %}

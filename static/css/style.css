@@ -1,0 +1,68 @@
+body {
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Banner */
+.banner {
+    min-height: 100vh;
+    position: relative;
+    background: url('https://cdn.pixabay.com/photo/2023/04/06/08/19/ai-generated-7903258_1280.jpg') center/cover no-repeat;
+}
+.banner .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+.banner-text {
+    position: relative;
+    z-index: 2;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    margin-top: 3rem;
+    padding-left: 20px;
+    border-left: 3px solid #0dcaf0;
+}
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+}
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -9px;
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    background: #0dcaf0;
+    border-radius: 50%;
+}
+
+/* Cards Hover Animation */
+#experience .card {
+    transition: all 0.3s ease-in-out;
+}
+#experience .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar hover effect */
+.navbar .nav-link.active, .navbar .nav-link:hover {
+    color: #0dcaf0 !important;
+}
+
+/* Footer */
+footer {
+    background: #111;
+    color: #aaa;
+}
+
+/* Smooth animations */
+[data-aos] {
+    transition: transform 1s ease, opacity 1s ease;
+}
